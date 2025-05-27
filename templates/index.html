@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERNSHIP PROJECT</title>
+  <link rel="stylesheet" href="../static/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">TextSummarizer</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#summary">Summary</a></li>
+    </ul>
+    <button id="darkToggle">🌙</button>
+  </nav>
+
+  <header class="hero">
+    <h1 class="fade-in">INTERNSHIP PROJECT</h1>
+    <p class="fade-in delay-1">AI-Based Text Summarization Tool</p>
+  </header>
+
+  <main class="container fade-in delay-2">
+    <h2>📝 Enter Your Text Below</h2>
+    <form method="post">
+      <textarea name="text" placeholder="Paste your text here..." rows="10"></textarea>
+      <button type="submit">✨ Summarize</button>
+    </form>
+
+    {% if summary %}
+    <div class="success-message">✅ Text summarized successfully!</div>
+    <div class="result" id="summary">
+      <h3>Summary:</h3>
+      <p>{{ summary }}</p>
+    </div>
+    {% endif %}
+  </main>
+
+  <footer id="about">
+    <p><strong>About Text Summarization:</strong><br>
+      Text summarization condenses content while preserving core meaning. It's used in NLP to improve understanding and productivity.
+    </p>
+    <p>© 2025 Internship Project. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+
+</body>
+</html>
